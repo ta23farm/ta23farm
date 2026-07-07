@@ -1,21 +1,20 @@
 <!doctype html>
 <html lang="ja">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- ローカルのBootstrap CSS -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <title>{{ title }}</title>
 </head>
 <body>
   <!-- nav bar -->
-  <nav class="navbar bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">たつみ農園</a>
-    </div>
-  </nav>
+ {% include "navbar.njk" %}
+
   <!-- コンテンツ -->
   {{ content | safe }}
 
   <!-- ローカルのBootstrap JS -->
   <script src="/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

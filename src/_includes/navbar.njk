@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">たつみ農園</a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {% set navPages = collections.all | eleventyNavigation %}
+        {% for entry in navPages %}
+          <li class="nav-item">
+            {# 現在のページかどうかを判別し、activeクラスとaria-currentを付与 #}
+            {% set isCurrent = entry.url == page.url %}
+            <a class="nav-link {% if isCurrent %}active{% endif %}" 
+               {% if isCurrent %}aria-current="page"{% endif %} 
+               href="{{ entry.url }}">
+              {{ entry.key }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
