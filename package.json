@@ -3,11 +3,14 @@
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@kevingimbel/eleventy-plugin-mermaid": "^3.0.1",
-    "bootstrap": "^5.3.8"
+    "bootstrap": "^5.3.8",
+    "dotenv": "^17.4.2",
+    "node-fetch": "^2.7.0"
   },
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
     "watch": "eleventy --watch"
-  }
+  },
+  "type" : "module"
 }
