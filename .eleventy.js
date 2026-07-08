@@ -1,5 +1,7 @@
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
-module.exports = function(eleventyConfig) {
+import eleventyNavigation from "@11ty/eleventy-navigation";
+import pluginMermaid from "@kevingimbel/eleventy-plugin-mermaid";
+
+export default function (eleventyConfig) {
   // BootstrapのCSSをコピー
   eleventyConfig.addPassthroughCopy({
     "node_modules/bootstrap/dist/css/bootstrap.min.css": "css/bootstrap.min.css"
@@ -9,7 +11,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "js/bootstrap.bundle.min.js"
   });
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
+  eleventyConfig.addPlugin(eleventyNavigation);
+  eleventyConfig.addPlugin(pluginMermaid);
+
   return {
     dir: {
       input: "src",
@@ -17,3 +22,4 @@ module.exports = function(eleventyConfig) {
     }
   };
 };
+
