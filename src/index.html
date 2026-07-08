@@ -8,8 +8,11 @@ eleventyNavigation:
   <h1>栽培品種</h1>
   <ul>
   {%- for content in api_berry %}
-    <li>
-      {{ content.Name }} | {{ content.Type }}
-    </li>
+    {%- if content.Own  %}
+      <li>
+        {{ content.Name }} | {{ content.Type }}
+      </li>
+    {%- endif %}
+
   {%- endfor %}
   </ul>
