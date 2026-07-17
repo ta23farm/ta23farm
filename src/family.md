@@ -22,8 +22,8 @@ graph TD;
   {%- endfor %}
 
   {%- for content in api_cross %}
-      {{ content.Father }} --- {{ content.Name }}  
       {{ content.Mother }} --- {{ content.Name }}  
+      {{ content.Father }} --- {{ content.Name }}  
   {%- endfor %}
 
 
